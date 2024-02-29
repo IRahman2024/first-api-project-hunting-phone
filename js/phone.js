@@ -21,6 +21,15 @@ const displayPhones = phones =>{
     //remove old search phone with new one
     phoneContainer.textContent = '';
 
+    //display show all button if there are more then 10 cards
+    const showAll = document.getElementById('show-all-container');
+    if(phones.length > 9)
+        showAll.classList.remove('hidden');
+    else
+    showAll.classList.add('hidden');
+    // display only 10 phones at a time
+    phones = phones.slice(0, 10);
+
     phones.forEach(phone =>{
         // console.log(phone);
         //step 2: create a div
